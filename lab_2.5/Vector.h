@@ -9,6 +9,7 @@ public:
 	Vector() : size(0), capasity(0), elements(nullptr) {}
 	Vector(const Vector&);
 	~Vector() { delete[] elements; }
-
+	Vector& operator=(const Vector&);
+	T operator[](const int);
 };
 
