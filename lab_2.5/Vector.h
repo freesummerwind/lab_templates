@@ -25,4 +25,10 @@ public:
 	size_t capacity() const noexcept;
 	void clear() noexcept;
 	void insert(const size_t, const T&);
+	void erase(const size_t);
+	void erase(const size_t, const size_t);
+	void push_back(const T&);
+	void pop_back();
+	void resize(size_t);
+	void swap(Vector&) noexcept;
 };
