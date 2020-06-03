@@ -1,4 +1,5 @@
 #include "Vector.h"
+#include "Person.h"
 #include <iostream>
 using std::cin;
 using std::cout;
@@ -52,5 +53,25 @@ int main()
 	cout << "New Vector 3: ";
 	for (int i = 0; i < vect3.size(); ++i) cout << vect3[i] << ' ';
 	cout << endl;
+
+	// Demonstration by person type
+
+	Vector<Person> people;
+	people.push_back({ "Max", 21, true });
+	people.push_back({ "Nicolet", 17, false });
+	people.push_back({ "Ted", 19, false });
+	cout << "My Vector:\n";
+	for (int i = 0; i < people.size(); ++i)
+	{
+		cout << people[i].name << ", " << people[i].age << " years old, " <<
+			(people[i].employed ? "employed" : "unemployed") << endl;
+	}
+	people.insert(3, { "Ann", 27, true });
+	cout << "New Vector:\n";
+	for (int i = 0; i < people.size(); ++i)
+	{
+		cout << people[i].name << ", " << people[i].age << " years old, " <<
+			(people[i].employed ? "employed" : "unemployed") << endl;
+	}
 	return 0;
 }

@@ -1,6 +1,6 @@
 #include "Vector.h"
+#include "Person.h"
 #include <stdexcept>
-#include <string>
 
 template Vector<char>;
 template Vector<bool>;
@@ -8,6 +8,7 @@ template Vector<int>;
 template Vector<float>;
 template Vector<double>;
 template Vector<std::string>;
+template Vector<Person>;
 
 template <class T>
 Vector<T>::Vector(const Vector<T>& v)
