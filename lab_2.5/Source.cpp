@@ -40,6 +40,7 @@ int main()
 	cout << "New Vector 3: ";
 	for (int i = 0; i < vect3.size(); ++i) cout << vect3[i] << ' ';
 	cout << endl;
+	vect1.erase(1, 2);
 	vect1.swap(vect3);
 	cout << "New Vector 1: ";
 	for (int i = 0; i < vect1.size(); ++i) cout << vect1[i] << ' ';

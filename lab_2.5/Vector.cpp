@@ -174,15 +174,12 @@ void Vector<T>::erase(const size_t pos)
 {
 	if (pos < sizeOfVector)
 	{
-		T* elem = new T[capacityOfVector];
-		for (size_t i = 0; i < sizeOfVector - 1; ++i)
+		for (size_t i = pos; i < sizeOfVector; ++i)
 		{
-			if (i < pos) elem[i] = elements[i];
-			else elem[i] = elements[i + 1];
+			if (i == sizeOfVector - 1) elements[i] = T();
+			else elements[i] = elements[i + 1];
 		}
 		--sizeOfVector;
-		delete[] elements;
-		elements = elem;
 	}
 }
 
@@ -191,15 +188,13 @@ void Vector<T>::erase(const size_t first, const size_t last)
 {
 	if (last < sizeOfVector && first <= last && first >= 0)
 	{
-		T* elem = new T[capacityOfVector];
-		for (size_t i = first; i < sizeOfVector - (last - first + 1); ++i)
+		for (size_t i = first; i < sizeOfVector; ++i)
 		{
-			if (i < first) elem[i] = elements[i];
-			else elem[i] = elements[i + (last - first + 1)];
+			if (i < sizeOfVector - (last - first + 1)) 
+				elements[i] = elements[i + (last - first + 1)];
+			else elements[i] = T();
 		}
 		sizeOfVector -= (last - first + 1);
-		delete[] elements;
-		elements = elem;
 	}
 }
 
